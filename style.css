@@ -33,3 +33,10 @@ input[type='text']::placeholder {
 #spinner {
     display: none;
 }
+
+.custom-logo {
+    margin-top: 20px;
+    border-radius: 100px;
+    height: 120px;
+    width: 120px;
+}
