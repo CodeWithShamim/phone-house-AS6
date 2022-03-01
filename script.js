@@ -1,3 +1,10 @@
+// Error message handle------------------------
+const errorMessage = (text) => {
+    const errorMessage = document.getElementById('error-msg');
+    errorMessage.style.display = text;
+}
+
+// -------------search event clickable start here--------------- 
 const search = () => {
     const searchField = document.getElementById('search-field');
     const searchFieldValue = searchField.value;
@@ -21,20 +28,28 @@ const search = () => {
     // get data -------
     const displayData = (phones) => {
         console.log(phones);
-        if (phones.length === 0) {
-            alert('result not find')
-        } else {
-            const parentCard = document.getElementById('parent-card');
-            phones.forEach(phone => {
 
+        if (phones.length === 0) {
+            errorMessage('block')
+        } else {
+            if (phones.length > 20) {
+                phones = phones.slice(0, 20)
+            }
+            const parentCard = document.getElementById('parent-card');
+            // remove previous search result 
+            parentCard.textContent = '';
+            errorMessage('none');
+
+            phones.forEach(phone => {
                 const div = document.createElement('div');
                 div.classList.add('col');
                 div.innerHTML = `
-                    <div class="card">
-                        <img src="${phone.image}" class="rounded img-fluid card-img-top" alt="...">
+                    <div class="card shadow text-center">
+                        <div class="text-center"><img src="${phone.image}" class="w-100 h-75 px-5 pt-4 rounded img-fluid card-img-top" alt="..."></div>
+                        
                         <div class="card-body">
-                            <h5 class="card-title">${phone.phone_name}</h5>
-                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <h5 class="card-title">Name: ${phone.phone_name}</h5>
+                            <p class="card-text">Brand: ${phone.brand}</p>    
                         </div>
                         <button class="bg-info py-3 border-0 w-50 mx-auto rounded mb-3 fw-bold text-white">Details</button>
                     </div>
@@ -42,11 +57,11 @@ const search = () => {
                 parentCard.appendChild(div);
 
             });
+
+
         }
 
     }
-
-
 
 
 };

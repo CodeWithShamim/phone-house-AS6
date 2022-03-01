@@ -15,7 +15,7 @@
 <body>
     <!-- header start here  -->
     <header class="container">
-        <!-- <h1 class="text-center text-primary mt-3">The Phone House</h1> -->
+        <h1 class="text-center text-primary mt-3">The Phone House</h1>
         <div class="input-group mt-4 w-75 mx-auto">
             <input type="text" class="form-control" placeholder="search phone here...." value="galaxy" id="search-field">
             <button onclick="search()" class="btn btn-outline-secondary bg-primary fw-bold text-white" type="button" id="search-btn">Search</button>
@@ -23,7 +23,7 @@
     </header>
 
     <!-- card section start here  -->
-    <section class="mt-5 container">
+    <section class="my-5 container">
         <div id="parent-card" class="row row-cols-1 row-cols-md-3 g-4">
             <!-- <div class="col">
                 <div class="card">
@@ -34,6 +34,13 @@
                     </div>
                 </div>
             </div> -->
+        </div>
+    </section>
+
+    <!-- error handle section  -->
+    <section id="error-msg">
+        <div class="text-center">
+            <h3 class="text-danger">Ohh! 😫 Result not find</h3>
         </div>
     </section>
 
