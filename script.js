@@ -42,8 +42,6 @@ const search = () => {
 
     // get data -------
     const displayData = (phones) => {
-        console.log(phones);
-
         if (phones.length === 0) {
             errorMessage('block')
             const parentCard = document.getElementById('parent-card');
@@ -84,7 +82,6 @@ const search = () => {
 
 // ------------------------------load details for phones --------------
 const loadDetails = (id) => {
-    console.log(id);
     const url = `https://openapi.programming-hero.com/api/phone/${id}`;
     fetch(url)
         .then(res => res.json())
@@ -95,7 +92,6 @@ const loadDetails = (id) => {
 
 // -----------------------card details added----------------------------
 const getDetails = (data) => {
-    console.log(data.data.releaseDate);
     const details = data.data;
     const detailsCard = document.getElementById('details-section');
     detailsCard.textContent = '';
@@ -114,30 +110,30 @@ const getDetails = (data) => {
                 <div class="d-flex justify-content-around">
                     <div>
                         <h4>Main Features:</h4>
-                        <p><span class= "fs-5 text-info">Chipset:</span> ${details.mainFeatures.chipSet? details.mainFeatures.chipSet:'No'}</p>
-                        <p><span class= "fs-5 text-info">Display size:</span> ${details.mainFeatures.displaySize? details.mainFeatures.displaySize:'No'}</p>
-                        <p><span class= "fs-5 text-info">Memory:</span> ${details.mainFeatures.memory? details.mainFeatures.memory:'No'}</p>       
-                        <p><span class= "fs-5 text-info">Storage:</span> ${details.mainFeatures.storage? details.mainFeatures.storage:'No'}</p>  
+                        <p><span class= "fs-5 text-info">Chipset:</span> ${details.mainFeatures?.chipSet? details.mainFeatures.chipSet:'No'}</p>
+                        <p><span class= "fs-5 text-info">Display size:</span> ${details.mainFeatures?.displaySize? details.mainFeatures.displaySize:'No'}</p>
+                        <p><span class= "fs-5 text-info">Memory:</span> ${details.mainFeatures?.memory? details.mainFeatures.memory:'No'}</p>       
+                        <p><span class= "fs-5 text-info">Storage:</span> ${details.mainFeatures?.storage? details.mainFeatures.storage:'No'}</p>  
                     </div>
                     <div class='ms-4'>
                         <h4>Sensors: </h4>
-                        <p><span class= "fs-5 text-info">1:</span> ${details.mainFeatures.sensors[0]? details.mainFeatures.sensors[0]:'No'}</p>    
-                        <p><span class= "fs-5 text-info">2:</span> ${details.mainFeatures.sensors[1]? details.mainFeatures.sensors[1]:'No'}</p>    
-                        <p><span class= "fs-5 text-info">3:</span> ${details.mainFeatures.sensors[2]? details.mainFeatures.sensors[2]:'No'}</p>    
-                        <p><span class= "fs-5 text-info">4:</span> ${details.mainFeatures.sensors[3]? details.mainFeatures.sensors[3]:'No'}</p>    
-                        <p><span class= "fs-5 text-info">5:</span> ${details.mainFeatures.sensors[4]? details.mainFeatures.sensors[4]:'No'}</p>    
-                        <p><span class= "fs-5 text-info">6:</span> ${details.mainFeatures.sensors[5]? details.mainFeatures.sensors[5]:'No'}</p>     
+                        <p><span class= "fs-5 text-info">1:</span> ${details.mainFeatures?.sensors[0]? details.mainFeatures.sensors[0]:'No'}</p>    
+                        <p><span class= "fs-5 text-info">2:</span> ${details.mainFeatures?.sensors[1]? details.mainFeatures.sensors[1]:'No'}</p>    
+                        <p><span class= "fs-5 text-info">3:</span> ${details.mainFeatures?.sensors[2]? details.mainFeatures.sensors[2]:'No'}</p>    
+                        <p><span class= "fs-5 text-info">4:</span> ${details.mainFeatures?.sensors[3]? details.mainFeatures.sensors[3]:'No'}</p>    
+                        <p><span class= "fs-5 text-info">5:</span> ${details.mainFeatures?.sensors[4]? details.mainFeatures.sensors[4]:'No'}</p>    
+                        <p><span class= "fs-5 text-info">6:</span> ${details.mainFeatures?.sensors[5]? details.mainFeatures.sensors[5]:'No'}</p>     
                     </div>                        
                 </div>
 
                 <div class='mt-4'>
                     <h4>Other Features:</h4>
-                    <p><span class="fs-5 text-danger">Bluetooth:</span> ${details.others.Bluetooth? details.others.Bluetooth:'No'}</p>
-                    <p><span class="fs-5 text-danger">GPS:</span> ${details.others.GPS? details.others.GPS:'No'}</p>
-                    <p><span class="fs-5 text-danger">NFC:</span> ${details.others.NFC? details.others.NFC:'No'}</p>
-                    <p><span class="fs-5 text-danger">Radio:</span> ${details.others.Radio? details.others.Radio:'No'}</p>
-                    <p><span class="fs-5 text-danger">USB:</span> ${details.others.USB? details.others.USB:'No'}</p>
-                    <p><span class="fs-5 text-danger">WLAN:</span> ${details.others.WLAN? details.others.WLAN:'No'}</p>
+                    <p><span class="fs-5 text-danger">Bluetooth:</span> ${details.others?.Bluetooth? details.others.Bluetooth:'No'}</p>
+                    <p><span class="fs-5 text-danger">GPS:</span> ${details.others?.GPS? details.others.GPS:'No'}</p>
+                    <p><span class="fs-5 text-danger">NFC:</span> ${details.others?.NFC? details.others.NFC:'No'}</p>
+                    <p><span class="fs-5 text-danger">Radio:</span> ${details.others?.Radio? details.others.Radio:'No'}</p>
+                    <p><span class="fs-5 text-danger">USB:</span> ${details.others?.USB? details.others.USB:'No'}</p>
+                    <p><span class="fs-5 text-danger">WLAN:</span> ${details.others?.WLAN? details.others.WLAN:'No'}</p>
                 </div>
 
             </div>
