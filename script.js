@@ -142,6 +142,6 @@ const getDetails = (data) => {
     `
 
     detailsCard.appendChild(div);
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 300)
 
 }
