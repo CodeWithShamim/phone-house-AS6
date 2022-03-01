@@ -106,7 +106,7 @@ const getDetails = (data) => {
         <div class="col-md-8">
             <div class="card-body  ms-4">
                 <h3 class="card-title text-center">${details.brand? details.brand:'No'}</h3>
-                <p class="card-text text-center text-primary">Release date: ${details.releaseDate? details.releaseDate:'No'}</p>
+                <p class="card-text text-center text-primary">Release date: ${details.releaseDate? details.releaseDate:'release date not find'}</p>
                 <div class="d-flex justify-content-around">
                     <div>
                         <h4>Main Features:</h4>
