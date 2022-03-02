@@ -97,6 +97,7 @@ const getDetails = (data) => {
     detailsCard.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card');
+    console.log(details);
     div.innerHTML =
         `
     <div class="row g-0 p-5 rounded">
@@ -105,8 +106,9 @@ const getDetails = (data) => {
         </div>
         <div class="col-md-8">
             <div class="card-body  ms-4">
-                <h3 class="card-title text-center">${details.brand? details.brand:'No'}</h3>
-                <p class="card-text text-center text-primary">Release date: ${details.releaseDate? details.releaseDate:'release date not find'}</p>
+                <h3 class="card-title text-center">${details.name? details.name:'No'}</h3>
+                <h6 class="card-title text-center">Brand: ${details.brand? details.brand:'No'}</h6>
+                <p class="card-text text-center text-primary"><span class= "fs-5 text-danger">Release date:</span> ${details.releaseDate? details.releaseDate:'release date not available'}</p>
                 <div class="d-flex justify-content-around">
                     <div>
                         <h4>Main Features:</h4>
